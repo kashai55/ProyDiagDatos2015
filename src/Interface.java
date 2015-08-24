@@ -32,7 +32,7 @@ public class Interface {
 			JPanel panel = new JPanel();
 			
 			//loading image
-			ImageIcon img = new ImageIcon("C:/Users/gusfc_000/workspace/Interface Crazy Duck Hunt/src/fundMenu.png");
+			ImageIcon img = new ImageIcon("src/fundMenu.png");
 			
 			//Label
 			JLabel label01 = new JLabel(img);//no funciona si declara imagen despues
@@ -128,9 +128,13 @@ public class Interface {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
+					
+					cronometro.main(null);
+					
+					
 					//loading image
-					ImageIcon img01 = new ImageIcon("C:/Users/gusfc_000/workspace/Interface Crazy Duck Hunt/src/fundGame.png");
-					ImageIcon img02 = new ImageIcon("C:/Users/gusfc_000/workspace/Interface Crazy Duck Hunt/src/duck.png");
+					ImageIcon img01 = new ImageIcon("src/fundGame.png");
+					ImageIcon img02 = new ImageIcon("src/duck.png");
 					
 					//layouts
 					JFrame frameGame = new JFrame("Game");
