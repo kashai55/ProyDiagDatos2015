@@ -1,12 +1,19 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 
 /**
  * @author Fernanda;
  */
 public class cronometro extends javax.swing.JFrame {
-
+	
+	//components
+	JLabel Tiempo = new JLabel();
+	JButton iniciar = new JButton();
+	
     public cronometro() {
         initComponents();
         setLocationRelativeTo(null);
@@ -15,10 +22,10 @@ public class cronometro extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
+    public void initComponents() {
 
-        Tiempo = new javax.swing.JLabel();
-        iniciar = new javax.swing.JButton();
+        
+        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -33,26 +40,7 @@ public class cronometro extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(iniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(Tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(iniciar)
-                .addGap(26, 26, 26))
-        );
+        
 
         pack();
     }// </editor-fold>                        
@@ -82,12 +70,12 @@ public class cronometro extends javax.swing.JFrame {
         
     };
     
-    private void actualizarLabel() {
+    public void actualizarLabel() {
         String tiempo = (m<=9?"0":"")+m+":"+(s<=9?"0":"")+s+":"+(cs<=9?"0":"")+cs;
         Tiempo.setText(tiempo);
     }
     
-    private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    public void iniciarActionPerformed(java.awt.event.ActionEvent evt) {                                        
         t.start();
         iniciar.setEnabled(false);
     }                                       
@@ -126,9 +114,6 @@ public class cronometro extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
-    private javax.swing.JLabel Tiempo;
-    private javax.swing.JButton iniciar;
-    // End of variables declaration                   
+                     
 }
 

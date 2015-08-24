@@ -123,13 +123,18 @@ public class Interface {
 				}
 			}); //final event Exit
 			
-			//add event to buttonNew
+			
+			//add event to buttonNewGame
 			buttonNewGame.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					
-					cronometro.main(null);
+					
+					cronometro temporizador = new cronometro();
+					temporizador.iniciarActionPerformed(e);
+					
+					JLabel labelTemp = temporizador.Tiempo;
 					
 					
 					//loading image
@@ -166,11 +171,14 @@ public class Interface {
 					
 				
 					panelGame.setLayout(null);//necesario para dibujar en el panel
+					panelGame.add(labelTemp);
 					panelGame.add(buttonBack);	
 					panelGame.add(labelPato);
 					panelGame.add(labelGame);
 					
 					
+					
+					labelTemp.setBounds(1000, 10, 100, 100);
 					panelGame.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 					
 					
