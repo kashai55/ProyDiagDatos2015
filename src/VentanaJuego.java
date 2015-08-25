@@ -77,7 +77,7 @@ public class VentanaJuego extends Interface {
 				panelGame.add(labelPato);
 				labelPato.setBounds(x, 0, 100, 100);
 				if (x > 1150) 
-				{	
+				{	x = 0;
 					direccion = -5;}
 				else
 				{x = x+direccion;}
