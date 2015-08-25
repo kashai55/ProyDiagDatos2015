@@ -6,31 +6,32 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.Timer;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class VentanaJuego extends Interface {
+	
+	//components
+
+	//loading image
+	ImageIcon img01 = new ImageIcon("src/fundGame.png");
+	ImageIcon img02 = new ImageIcon("src/duck.png");
+	
+	//layouts
+	JFrame frameGame = new JFrame("Game");
+	JPanel panelGame = new JPanel();
+	JLabel labelGame = new JLabel(img01);
+	JLabel labelPato = new JLabel(img02);
+	
 	public VentanaJuego() {
 		
+		//temporizador
 		cronometro temporizador = new cronometro();
 		temporizador.iniciarActionPerformed(null);
-		
 		JLabel labelTemp = temporizador.Tiempo;
 		
-		
-		//loading image
-		ImageIcon img01 = new ImageIcon("src/fundGame.png");
-		ImageIcon img02 = new ImageIcon("src/duck.png");
-		
-		//layouts
-		JFrame frameGame = new JFrame("Game");
-		JPanel panelGame = new JPanel();
-		JLabel labelGame = new JLabel(img01);
-		JLabel labelPato = new JLabel(img02);
-		
-		
-		
-		
+		//event back
 		buttonBack.setBounds(15, 635, 150, 35);//position button
 		buttonBack.addActionListener(new ActionListener() {
 			@Override 	 
@@ -41,52 +42,66 @@ public class VentanaJuego extends Interface {
 			}
 		});
 		
+		//frame add complements
 		frame.setVisible(false);
 		frameGame.setResizable(false);
 		frameGame.add(panelGame);
 		frameGame.setVisible(true);
 		frameGame.setSize(1240, 720);
 		
+		//position fundGame
 		labelGame.setBounds(-2, -2, 1240, 720);
 		
 		
-	
+		//panel options, add complements
 		panelGame.setLayout(null);//necesario para dibujar en el panel
-		panelGame.add(labelTemp);
-		panelGame.add(buttonBack);	
-		panelGame.add(labelPato);
-		panelGame.add(labelGame);
-		
-		
-		
-		labelTemp.setBounds(1000, 10, 100, 100);
+		//panelGame.add(labelTemp);
+		//panelGame.add(buttonBack);	
+		//panelGame.add(labelPato);
+		//panelGame.add(labelGame);
 		panelGame.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 		
+		//position temp
+		labelTemp.setBounds(1000, 10, 100, 100);
+		panelGame.add(labelPato);
+		labelPato.setBounds(0, 0, 100, 100);
+
+		Timer timer = new Timer();
 		
-	    
-		int x = 0;
-		int y = 0;
-		//timer
-		Timer timer = new Timer(10000000, null);
-		
-		timer.setInitialDelay(100);
-		
-		while (x<100){
-			timer.setDelay(10000);
-			timer.setInitialDelay(10000);
-			timer.start();
-			labelPato.setBounds(x, y, 124, 100);
-			x = x+1;
-			y = y+1;
-			
-			System.out.println(timer.isRunning());
-			panelGame.updateUI();
-			
-            
-		}
+		TimerTask task = new TimerTask() {
+			int x = 0;
+			int direccion = 5;
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				panelGame.add(labelPato);
+				labelPato.setBounds(x, 0, 100, 100);
+				if (x > 1150) 
+				{	
+					direccion = -5;}
+				else
+				{x = x+direccion;}
+			}
 		
 		
-	
+		};
+		timer.schedule(task, 0, 20);
 	}
+	
+	
+	
+//	public void iniciar(){
+//		while(x < 10){
+//			timer.setDelay(200);
+//			x = x + 1;
+//			
+//		}
+//		timer.setRepeats(false);
+//		timer.start();
+//            
+//	
+//		};
+	
+	
 
 }
