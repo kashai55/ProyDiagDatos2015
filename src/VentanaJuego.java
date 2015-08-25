@@ -73,14 +73,10 @@ public class VentanaJuego extends Interface {
 			int direccion = 5;
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
-				panelGame.add(labelPato);
 				labelPato.setBounds(x, 0, 100, 100);
-				if (x > 1150) 
-				{	x = 0;
-					direccion = -5;}
-				else
-				{x = x+direccion;}
+				if (x>1150){direccion=-5;}
+				else if (x<0) {direccion=5;}
+				x+=direccion;
 			}
 		
 		
