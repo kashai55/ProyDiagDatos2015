@@ -8,11 +8,38 @@ import javax.swing.JLabel;
 import java.util.Random;
 
 abstract class Duck implements MouseListener {
-	protected boolean alive=true;
-	protected int life;
+	//protected boolean alive=true;
+	protected int resist;
 	protected int points;
-	protected int speed;
-	protected int cta;
+	protected int movex;
+	protected int movey;
+	
+	public int setPoints(int point){
+		return this.points=point;
+	}
+	public int getPoints(){
+		return points;
+	}
+	public int setResist(int resistp){
+		return this.resist=resistp;
+	}
+	public int getResist(){
+		return resist;
+	}
+	public int setMovex(int x){
+		return this.movex=x;
+	}
+	public int getMovex(){
+		return movex;
+	}
+	public int setMovey(int y){
+		return this.movey=y;
+	}
+	public int getMovey(){
+		return movey;
+	}
+
+	//protected int cta;
 	protected JLabel labelGame;
 	ImageIcon img02 = new ImageIcon("src/duck.png");
 	protected JLabel labelPato=new JLabel(img02);
@@ -30,7 +57,6 @@ abstract class Duck implements MouseListener {
 		
 		this.mover();//solo para probar
 	}
-	public abstract void operation();
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -62,11 +88,6 @@ abstract class Duck implements MouseListener {
 		timer.schedule(task, 0, 20);
 	}
 	
-
-	protected int getLife(){
-		return this.life;
-	}
-	protected int getPoints(){
-		return this.life;
-	}		
+	public abstract void operation();
+	
 }

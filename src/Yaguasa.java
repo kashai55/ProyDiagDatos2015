@@ -6,10 +6,10 @@ public class Yaguasa extends Duck{
 		super(ventana);
 	}
 
-	protected int life;
-	protected int points;
-	protected int speed;
-	protected int cta;
+	int point=25;
+	int resist=5;
+	int x=10;
+	int y=50;
 	
 	public static void iniciar() {
 	    Timer timer;
@@ -29,10 +29,13 @@ public class Yaguasa extends Duck{
 	    }
 	
 	public void operation() {
-		System.out.println("soy un pato yagua");
-		System.out.println(getLife());
-		iniciar();
-		// TODO Auto-generated method stub
+			setPoints(point);
+			setResist(resist);
+			setMovex(x);
+			setMovey(y);
+			System.out.println(getPoints());
+			System.out.println(getResist());
+			System.out.println("soy un pato yagua");
 	
 	}
 }
