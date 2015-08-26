@@ -47,15 +47,18 @@ public class WildDuck extends Duck {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		if (this.alive==false){return;}
+		this.alive=false;
 		labelPato.setIcon(img03);;//FC
 		Timer timerP = new Timer();
+		timer.cancel();
 		y = randomY;
 		TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
 				labelPato.setBounds(randomX, y, 100, 100);
 				y = y + 5;
-				timer.cancel();
+				if (y>600){timerP.cancel();}
 			}
 		};
 		timerP.schedule(task, 0, 35);

@@ -5,17 +5,6 @@ import java.awt.Color;
 	import java.awt.event.ActionListener;
 
 	import javax.swing.*;
-import javax.swing.event.DocumentListener;
-import javax.swing.event.UndoableEditListener;
-import javax.swing.plaf.LayerUI;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.Element;
-import javax.swing.text.Position;
-import javax.swing.text.Segment;
-import javax.swing.text.Style;
-import javax.swing.text.StyledDocument;
 
 
 
@@ -54,7 +43,8 @@ public class Interface {
 		 * @param args
 		 */
 		public static void main (String[] args){
-
+//			ReadXMLFile xml = new ReadXML();
+//			xml.readXml("RESIST");
 			//panel add to frame
 			frame.add(panel);	
 			

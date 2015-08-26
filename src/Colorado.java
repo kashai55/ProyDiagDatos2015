@@ -51,14 +51,15 @@ public void mover(){
 				randomX+=direccionX;
 			}
 		};
-		timer.schedule(task, 0, 20);
+		timer.schedule(task, 0, 10);
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		if (this.alive==false){return;}
+		this.alive=false;
 		labelPato.setIcon(img03);;//FC
-	//	labelGame.add(labelPatoMuerto);//FC
-	//	labelPatoMuerto.setBounds(randomX, randomY, 100, 100);//FC
+		timer.cancel();
 		Timer timerP = new Timer();
 		y = randomY;
 		TimerTask task = new TimerTask() {
@@ -66,7 +67,7 @@ public void mover(){
 			public void run() {
 				labelPato.setBounds(randomX, y, 100, 100);
 				y = y + 5;
-				timer.cancel();
+				if (y>600){timerP.cancel();}
 			}
 		};
 		timerP.schedule(task, 0, 35);

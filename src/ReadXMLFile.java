@@ -11,7 +11,7 @@ import org.xml.sax.SAXException;
 
 public class ReadXMLFile {
 
-	public void readXml(String request){
+	public String readXml(String request){
 		try {
 		    DocumentBuilderFactory fábricaCreadorDocumento = DocumentBuilderFactory.newInstance();
 		    DocumentBuilder creadorDocumento = fábricaCreadorDocumento.newDocumentBuilder();
@@ -61,5 +61,6 @@ public class ReadXMLFile {
 		    System.out.println("ERROR: No se ha podido crear el generador de documentos XML\n"+ex.getMessage());
 		    ex.printStackTrace();
 		}
+		return null;
 	}
 }

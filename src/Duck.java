@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import java.util.Random;
 
 abstract class Duck implements MouseListener {
-	//protected boolean alive=true;
+	protected boolean alive=true;
 	protected int resist;
 	protected int points;
 	protected int movex;
