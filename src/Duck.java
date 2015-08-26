@@ -1,7 +1,7 @@
-import java.awt.event.MouseEvent;
+//import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Timer;
-import java.util.TimerTask;
+//import java.util.TimerTask;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -45,8 +45,6 @@ abstract class Duck implements MouseListener {
 	ImageIcon img03 = new ImageIcon("src/ducks/duckL01.png");//FC
 	ImageIcon img04 = new ImageIcon("src/ducks/duckD01.png");//FC
 	
-	private int[] direcciones=new int[2];
-	
 	int randomX = new Random().nextInt(1150);
 	int randomY = new Random().nextInt(500);
 	int y;
@@ -58,6 +56,5 @@ abstract class Duck implements MouseListener {
 	
 	public void mover(){}
 	
-	public abstract void operation();
 	
 }

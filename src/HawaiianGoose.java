@@ -8,10 +8,6 @@ import javax.swing.JLabel;
 
 public class HawaiianGoose extends Duck {
 	
-	protected int life;
-	protected int points;
-	protected int speed;
-	protected int cta;
 	
 	private int[] direcciones=new int[2];
 	
@@ -23,6 +19,8 @@ public class HawaiianGoose extends Duck {
 	
 	public HawaiianGoose(VentanaJuego ventana) {
 		super(ventana);
+		super.setPoints(10);
+		super.setResist(2);
 		labelGame.add(labelPato);
 		labelPato.addMouseListener(this);
 		// TODO Auto-generated constructor stub
@@ -79,10 +77,4 @@ public class HawaiianGoose extends Duck {
 	public void mouseReleased(MouseEvent e) {}
 
 
-	
-	public void operation() {
-		System.out.println("soy un pato hawaiano");
-		// TODO Auto-generated method stub
-		
-	}
 }

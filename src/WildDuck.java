@@ -23,6 +23,8 @@ public class WildDuck extends Duck {
 	
 	public WildDuck(VentanaJuego ventana) {
 		super(ventana);
+		super.setPoints(1);
+		super.setResist(1);
 		labelGame.add(labelPato);
 		labelPato.addMouseListener(this);
 		// TODO Auto-generated constructor stub
@@ -74,11 +76,4 @@ public class WildDuck extends Duck {
 	@Override
 	public void mouseReleased(MouseEvent e) {}
 	
-
-
-	public void operation() {
-		System.out.println("soy un pato Salvaje");
-		// TODO Auto-generated method stub
-		
-	}
 }

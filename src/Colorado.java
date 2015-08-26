@@ -26,6 +26,8 @@ public class Colorado extends Duck {
 	
 	public Colorado(VentanaJuego ventana) {
 		super(ventana);
+		super.setPoints(10);
+		super.setResist(2);
 		System.out.println("agregando label");
 		labelGame.add(labelPato);
 		labelPato.addMouseListener(this);
@@ -83,10 +85,4 @@ public void mover(){
 	@Override
 	public void mouseReleased(MouseEvent e) {}
 	
-	
-	public void operation() {
-		System.out.println("soy un pato colorado");
-		
-	}
-
 }

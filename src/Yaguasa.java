@@ -7,18 +7,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class Yaguasa extends Duck{
+	    int Takep=5;
 	public Yaguasa(VentanaJuego ventana) {
 		super(ventana);
+		super.setPoints(25);
+		super.setResist(1);
 		labelGame.add(labelPato);
 		labelPato.addMouseListener(this);
 	}
-
-	int point=25;
-	int resist=5;
-	int x=10;
-	int y=50;
-	
-	
+		
 	private int[] direcciones=new int[2];
 	
 	
@@ -96,15 +93,5 @@ public void mover(){
 	public void mouseReleased(MouseEvent e) {}
 
 
-	
-	public void operation() {
-			setPoints(point);
-			setResist(resist);
-			setMovex(x);
-			setMovey(y);
-			System.out.println(getPoints());
-			System.out.println(getResist());
-			System.out.println("soy un pato yagua");
-	
 	}
-}
+

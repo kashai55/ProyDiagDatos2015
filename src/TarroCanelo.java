@@ -23,6 +23,8 @@ public class TarroCanelo extends Duck{
 	
 	public TarroCanelo(VentanaJuego ventana) {
 		super(ventana);
+		super.setPoints(5);
+		super.setResist(1);
 		labelGame.add(labelPato);
 		labelPato.addMouseListener(this);
 		// TODO Auto-generated constructor stub
@@ -79,18 +81,4 @@ public void mover(){
 	public void mouseReleased(MouseEvent e) {}
 	
 
-
-//	public void operation() {
-//		System.out.println("soy un pato colorado");
-//		
-//	}
-
-
-	public void operation() {
-		System.out.println("soy un pato Tarro");
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 }
