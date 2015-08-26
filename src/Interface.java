@@ -5,6 +5,17 @@ import java.awt.Color;
 	import java.awt.event.ActionListener;
 
 	import javax.swing.*;
+import javax.swing.event.DocumentListener;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.plaf.LayerUI;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.text.Element;
+import javax.swing.text.Position;
+import javax.swing.text.Segment;
+import javax.swing.text.Style;
+import javax.swing.text.StyledDocument;
 
 
 
@@ -17,8 +28,8 @@ import java.awt.Color;
 public class Interface {
 	
 	//button general to back
-//	static JButton buttonBack = new JButton("Back to Menu");
-	
+	static JButton buttonBack = new JButton("Back to Menu");
+
 	//frame
 	static JFrame frame = new JFrame("Crazy Duck");
 	
@@ -110,6 +121,53 @@ public class Interface {
 						
 				}
 			}); //final event Exit
+			
+			//add event to buttonAbout
+			buttonAbout.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					//components
+					JFrame frameAbout = new JFrame("About");
+					JPanel panelAbout = new JPanel();
+					
+					String String = "hola mundo ";
+						    
+					JLabel textAbout = new JLabel(String);
+					
+
+					//option components
+					frame.setVisible(false);
+					frameAbout.setVisible(true);
+					frameAbout.setResizable(false);
+					frameAbout.setSize(1240, 720);
+					panel.setLayout(null);
+					
+					textAbout.setFont(new Font("Arial", 21, 21));
+					textAbout.setSize(500, 500);
+					textAbout.setBackground(Color.RED);
+					textAbout.setForeground(Color.WHITE);
+					
+					
+					
+					//add all components
+					frameAbout.add(panelAbout);
+					panelAbout.add(textAbout);
+					
+					
+					panelAbout.add(buttonBack);
+					
+					//event buttonBack
+					buttonBack.addActionListener(new ActionListener() {
+						@Override 	 
+						public void actionPerformed(ActionEvent e) {
+							// TODO Auto-generated method stub
+							frameAbout.dispose();
+							frame.setVisible(true);
+						}
+					});//final event buttonBack
+				}
+			});//final event buttonAbout
 			
 			
 			//add event to buttonNewGame
