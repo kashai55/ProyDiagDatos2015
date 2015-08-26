@@ -1,20 +1,20 @@
 
 public class DuckCreator extends Creator{
-	public Duck factoryMethod(String DuckType){
+	public Duck factoryMethod(int DuckType, VentanaJuego ventana){
 		
 		Duck duck = null;
 
 		
 		switch (DuckType){
-			case "Colorado": duck= new Colorado();
+			case 1 : duck= new Colorado(ventana);
 				break;
-			case "HawaiianGoose": duck= new HawaiianGoose();
+			case 2: duck= new HawaiianGoose(ventana);
 				break;
-			case "TarroCanelo": duck= new TarroCanelo();
+			case 3: duck= new TarroCanelo(ventana);
 				break;
-			case "Yaguasa": duck= new Yaguasa();
+			case 4: duck= new Yaguasa(ventana);
 				break;
-			case "WildDuck": duck= new WildDuck();
+			case 5: duck= new WildDuck(ventana);
 				break;
 			
 		}

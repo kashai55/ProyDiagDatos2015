@@ -2,6 +2,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Yaguasa extends Duck{
+	public Yaguasa(VentanaJuego ventana) {
+		super(ventana);
+	}
+
 	protected int life;
 	protected int points;
 	protected int speed;

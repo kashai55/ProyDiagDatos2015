@@ -17,7 +17,7 @@ import java.awt.Color;
 public class Interface {
 	
 	//button general to back
-	static JButton buttonBack = new JButton("Back to Menu");
+//	static JButton buttonBack = new JButton("Back to Menu");
 	
 	//frame
 	static JFrame frame = new JFrame("Crazy Duck");
@@ -116,8 +116,7 @@ public class Interface {
 			buttonNewGame.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					VentanaJuego Ven;
-					Ven= new VentanaJuego();
+					new VentanaJuego();
 				}
 			});//final event New
 			
