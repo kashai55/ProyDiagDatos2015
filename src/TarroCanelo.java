@@ -31,16 +31,24 @@ public class TarroCanelo extends Duck{
 		direcciones[1]=5;
 		TimerTask task = new TimerTask() {
 			int direccionX = direcciones[new Random().nextInt(2)];
+			int direccionY = direcciones[new Random().nextInt(2)];
 			@Override
 			public void run() {
 				labelPato.setBounds(randomX, randomY, 100, 100);
 				if (randomX>1150){direccionX=-5;
 				labelPato.setIcon(img02);//FC
 				}
+				if (randomY<0){direccionY=5;
+				labelPato.setIcon(img02);
+				}
+				if (randomY>500){direccionY=-5;
+				labelPato.setIcon(img02);
+				}
 				else if (randomX<0) {direccionX=5;
 				labelPato.setIcon(img01);//FC
 				}
 				randomX+=direccionX;
+				randomY+=direccionY;
 			}
 		};
 		timer.schedule(task, 0, 50);
