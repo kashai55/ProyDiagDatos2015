@@ -7,12 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class WildDuck extends Duck {
-	
-	protected int life;
-	protected int points;
-	protected int speed;
-	protected int cta;
-	
+
 	private int[] direcciones=new int[2];
 	
 	
@@ -50,7 +45,10 @@ public class WildDuck extends Duck {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (this.alive==false){return;}
-		this.alive=false;
+		this.resist-=1;
+		if(this.resist==0){
+			this.alive=false;
+		}
 		labelPato.setIcon(img03);;//FC
 		Timer timerP = new Timer();
 		timer.cancel();

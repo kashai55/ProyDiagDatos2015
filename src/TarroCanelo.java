@@ -51,13 +51,15 @@ public void mover(){
 		timer.schedule(task, 0, 50);
 	}
 	
-	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (this.alive==false){return;}
-		this.alive=false;
-		timer.cancel();
+		this.resist-=1;
+		if(this.resist==0){
+			this.alive=false;
+		}
 		labelPato.setIcon(img03);;//FC
 		Timer timerP = new Timer();
+		timer.cancel();
 		y = randomY;
 		TimerTask task = new TimerTask() {
 			@Override

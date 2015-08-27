@@ -43,8 +43,8 @@ public class Interface {
 		 * @param args
 		 */
 		public static void main (String[] args){
-//			ReadXMLFile xml = new ReadXML();
-//			xml.readXml("RESIST");
+			ReadXMLFile xml = new ReadXMLFile();
+			xml.readXml("RESIST");
 			//panel add to frame
 			frame.add(panel);	
 			
