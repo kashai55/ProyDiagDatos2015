@@ -59,7 +59,7 @@ public void mover(){
 				randomX+=direccionX;
 			}
 		};
-		timer.schedule(task, 0, 5);
+		timer.schedule(task, 0, 3);
 	}
 	
 	public void mouseClicked(MouseEvent e) {

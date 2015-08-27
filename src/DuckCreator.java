@@ -8,9 +8,8 @@ public class DuckCreator{
 	int PH1=82;
 	int PH2=91;
 	int PWd=81;
-	int rnd = new Random().nextInt(99);
 	public Duck CrearPato(VentanaJuego ventana){
-		
+		int rnd = new Random().nextInt(100);
 		Duck duck=null;
 		if(rnd>=PY1 && rnd<=99){//PYaguasa
 			duck = new Yaguasa(ventana);
