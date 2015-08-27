@@ -18,7 +18,6 @@ public class Yaguasa extends Duck{
 		
 	private int[] direcciones=new int[2];
 	
-	
 	ImageIcon img01 = new ImageIcon("src/ducks/duckR04.png");
 	ImageIcon img02 = new ImageIcon("src/ducks/duckL04.png");//FC
 	ImageIcon img03 = new ImageIcon("src/ducks/duckD04.png");

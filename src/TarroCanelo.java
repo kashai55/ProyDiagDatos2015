@@ -8,14 +8,9 @@ import javax.swing.JLabel;
 
 public class TarroCanelo extends Duck{
 	
-	protected int life;
-	protected int points;
-	protected int speed;
-	protected int cta;
 	
 	private int[] direcciones=new int[2];
-	
-	
+		
 	ImageIcon img01 = new ImageIcon("src/ducks/duckR01.png");
 	ImageIcon img02 = new ImageIcon("src/ducks/duckL01.png");//FC
 	ImageIcon img03 = new ImageIcon("src/ducks/duckD01.png");
@@ -30,7 +25,7 @@ public class TarroCanelo extends Duck{
 		// TODO Auto-generated constructor stub
 	}
 	
-public void mover(){
+	public void mover(){
 		
 		direcciones[0]=-5;
 		direcciones[1]=5;
