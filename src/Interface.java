@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -127,10 +128,31 @@ public class Interface {
 					JPanel panelAbout = new JPanel();
 					
 					//String it contains as play
-					String String = "hola mundo ";
+					String String = 
+					"*Inicie una nueva partida en New Game" + "*Si desea hacer cambios en la configuracion" 				+ "\n"
+					+ " del juego como, ver las partidas de los jugadores, eliminar jugador entre otras," 					+ "\n"
+					+ " ingrese como Administrador."																		+ "\n"
+					+ "*Si desea ver una partida online ingrese su usuario como Streams" 									+ "\n"
+					+ "*Usted debera disparar con el cursor dando cli a los patos en pantalla, se le sumara" 				+ "\n"
+					+ "  puntos; esto depende del pato al que dispare, asi los diferentes tipos de patos son:" 				+ "\n"
+					+ "-Pato salvaje: rápidos y comunes, mueren con una bala y su puntuación es de 1. Su color es Negro." 	+ "\n"
+					+ "-Pato colorado: son rápidos y fuertes, dan 2 puntos y aguantan hasta 5 balas. Su color es Azul."	 	+ "\n"
+					+ "-Tarro canelo: son lento y extremadamente fuertes, aportan 5 puntos, su vida se calcula" 			+ "\n"
+					+ "  aleatoriamente con una distribución normal con una media de 30. Su color es Amarillo." 			+ "\n"
+					+ "-Yaguasa piquirrojo: son el doble de rápidos que el pato colorado, con una bala mueren y" 			+ "\n"
+					+ "dan 25 puntos, su vida dura 25 segundos, en el caso de que no le dispare resta 5 del jugador."  		+ "\n"
+					+ " Su color es Rojo." 																					+ "\n"
+					+ "-Ganso de Hawai: son rápidos y muy agiles, dan 10 puntos y son débiles con 2 balas ya caen." 		+ "\n"
+					+ "Su color es Verde" 																					+ "\n" + "\n"
+					+ "Al iniciar una partida los patos aparecerán cada 10 segundos aleatoriamente, el juego avanza de" 	+ "\n"
+					+ "nivel al minuto treinta o cuando ya no haya ningún pato en la pantalla, al subir de nivel la" 		+ "\n"
+					+ "velocidad de aparición  de los patos va aumentado, el pato salvaje bajara su probabilidad de " 		+ "\n"
+					+ "aparición un 4%, mientras que los demás aumentara un 1%." 											+ "\n"
+					+ "El juego termina cuando hay más de 20 patos en la pantalla." 										+ "\n"
+					;
 						    
 					//Label shows the String
-					JLabel textAbout = new JLabel(String);
+					JTextArea textAbout = new JTextArea(String);
 					
 
 					//option components
@@ -138,14 +160,17 @@ public class Interface {
 					frameAbout.setVisible(true);
 					frameAbout.setResizable(false);
 					frameAbout.setSize(1240, 720);
-					panel.setLayout(null);
+					panelAbout.setBackground(Color.BLACK);
+					panelAbout.setLayout(null);
 					
+					textAbout.setEditable(false);
 					textAbout.setFont(new Font("Arial", 21, 21));
-					textAbout.setSize(500, 500);
-					textAbout.setBackground(Color.RED);
-					textAbout.setForeground(Color.WHITE);
-					
-					
+					textAbout.setMargin(new Insets(20, 35, 10, 100));
+					textAbout.setColumns(10);
+					textAbout.setBounds(100, 20, 1000, 580);
+					//different methods to change color
+					textAbout.setBackground(new Color(50, 50, 50));
+					textAbout.setForeground(Color.GREEN);
 					
 					//add all components
 					frameAbout.add(panelAbout);
@@ -153,6 +178,10 @@ public class Interface {
 					panelAbout.add(buttonBack);
 					
 					//event buttonBack
+					
+					buttonBack.setBounds(545, 620, 150, 50);
+					buttonBack.setBackground(new Color(45, 45, 45));
+					buttonBack.setForeground(new Color(45, 255, 45));
 					buttonBack.addActionListener(new ActionListener() {
 						@Override 	 
 						public void actionPerformed(ActionEvent e) {
