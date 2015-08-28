@@ -9,20 +9,23 @@ import java.awt.Color;
 
 
 	/**
-	 * 
-	 * @author Gustavo F.
-	 * @version 17 August, 2015
+	 * The Interface program contains simple and 
+	 * necessary complements to form a window.
+	 * @author Fallas G
+	 * @version 1.0
+	 * @since 2015-08-14
 	 *
 	 */
 public class Interface {
+	//creating components
 	
 	//button general to back
 	static JButton buttonBack = new JButton("Back to Menu");
 
-	//frame
+	//Frame 
 	static JFrame frame = new JFrame("Crazy Duck");
 	
-	//Panel
+	//Panel 
 	static JPanel panel = new JPanel();
 	
 	//loading image
@@ -38,9 +41,13 @@ public class Interface {
 	static JButton buttonAbout 	= 	new JButton("About");
 	static JButton buttonExit 		= 	new JButton("Exit");
 
-			/**
+		/**
+		 * The main method executes all the components with 
+		 * established options like size, color, text and position
 		 * @see Swing.class
 		 * @param args
+		 * @return the frame with various added components showing 
+		 * in the game window interface and menu
 		 */
 		public static void main (String[] args){
 			ReadXMLFile xml = new ReadXMLFile();
@@ -117,12 +124,14 @@ public class Interface {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					//components
+					//creating components
 					JFrame frameAbout = new JFrame("About");
 					JPanel panelAbout = new JPanel();
 					
+					//String it contains as play
 					String String = "hola mundo ";
 						    
+					//Label shows the String
 					JLabel textAbout = new JLabel(String);
 					
 
@@ -143,8 +152,6 @@ public class Interface {
 					//add all components
 					frameAbout.add(panelAbout);
 					panelAbout.add(textAbout);
-					
-					
 					panelAbout.add(buttonBack);
 					
 					//event buttonBack
@@ -152,6 +159,7 @@ public class Interface {
 						@Override 	 
 						public void actionPerformed(ActionEvent e) {
 							// TODO Auto-generated method stub
+							//close frame
 							frameAbout.dispose();
 							frame.setVisible(true);
 						}
@@ -166,10 +174,9 @@ public class Interface {
 				public void actionPerformed(ActionEvent e) {
 					new VentanaJuego();
 				}
-			});//final event New
+			});//final event buttonNewGame
 			
-			//add event to butttonOptions
-			
+		
 		}//main final
 		
 	}
