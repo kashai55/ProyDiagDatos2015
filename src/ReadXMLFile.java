@@ -9,8 +9,22 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+
+/**
+ * The class ReadXMLFile program reading an XML file
+ * @author Gonzalez K.
+ * @version 1.0
+ * 
+ */
 public class ReadXMLFile {
 
+	/**
+	 * The String readXml method Load the document and get File.xml 
+	 * nodes whose label you want to search, you get the list data 
+	 * through the items one by one.
+	 * @param request
+	 * @return The data on the list
+	 */
 	public String readXml(String request){
 		try {
 		    DocumentBuilderFactory fábricaCreadorDocumento = DocumentBuilderFactory.newInstance();

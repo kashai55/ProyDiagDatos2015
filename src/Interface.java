@@ -1,20 +1,18 @@
 import java.awt.Color;
-	import java.awt.Cursor;
-	import java.awt.Font;
-	import java.awt.event.ActionEvent;
-	import java.awt.event.ActionListener;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
 
-	import javax.swing.*;
 
 
 
 	/**
 	 * The Interface program contains simple and 
 	 * necessary complements to form a window.
-	 * @author Fallas G
-	 * @version 1.0
-	 * @since 2015-08-14
-	 *
+	 * @author Fallas G.
+	 * @version 1.3
 	 */
 public class Interface {
 	//creating components
@@ -36,9 +34,9 @@ public class Interface {
 	
 	//buttons
 	static JButton buttonNewGame 	= 	new JButton("New Game");
-	static JButton buttonStreams   =   new JButton("Streams");
+	static JButton buttonStreams   	=   new JButton("Streams");
 	static JButton buttonAdmi		=	new JButton("Administrator");
-	static JButton buttonAbout 	= 	new JButton("About");
+	static JButton buttonAbout 		= 	new JButton("About");
 	static JButton buttonExit 		= 	new JButton("Exit");
 
 		/**
@@ -52,6 +50,7 @@ public class Interface {
 		public static void main (String[] args){
 			ReadXMLFile xml = new ReadXMLFile();
 			xml.readXml("RESIST");
+			
 			//panel add to frame
 			frame.add(panel);	
 			
@@ -77,7 +76,7 @@ public class Interface {
 			panel.setLayout(null);
 			panel.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 			
-			//option buttons
+			//position and option buttons
 			buttonNewGame.setBounds(800, 235, 125, 35);
 			buttonNewGame.setFont(new Font("Arial", Font.BOLD, 15));
 			buttonStreams.setBounds(680, 315, 150, 35);
@@ -96,7 +95,6 @@ public class Interface {
 			buttonAdmi.setBackground(Color.BLACK);
 			buttonStreams.setForeground(Color.GREEN);
 			buttonStreams.setBackground(Color.BLACK);
-			
 			buttonAbout.setForeground(Color.GREEN);
 			buttonAbout.setBackground(Color.BLACK);
 			buttonExit.setForeground(Color.RED);
@@ -105,7 +103,7 @@ public class Interface {
 		
 			
 			//*******************Final Menu*************************
-			
+				
 			
 			//add event to buttonExit
 			buttonExit.addActionListener(new ActionListener() {
